@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/16 12:33:59 by grenaud-          #+#    #+#             */
-/*   Updated: 2023/05/30 16:33:47 by grenaud-         ###   ########.fr       */
+/*   Created: 2023/05/30 15:32:55 by grenaud-          #+#    #+#             */
+/*   Updated: 2023/05/30 16:33:13 by grenaud-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
+# include <iostream>
 
-Zombie	*newZombie(std::string name);
-void	randomChump(std::string name);
-
-int	main(void)
+class	Zombie
 {
-	Zombie *z = newZombie("Johny");
-	z->announce();
-	randomChump("Halliday");
-	delete z;
-}
+	public:
+		Zombie(std::string name);
+		~Zombie(void);
+		void	announce(void);
+	private:
+		std::string		_name;
+};
+
+#endif
