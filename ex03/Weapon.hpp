@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   weapon.hpp                                         :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 19:10:25 by grenaud-          #+#    #+#             */
-/*   Updated: 2023/05/30 19:53:36 by grenaud-         ###   ########.fr       */
+/*   Updated: 2023/06/05 13:00:49 by grenaud-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class	Weapon
 		const std::string&	getType(void);
 		void	setType(std::string type);
 	private:
-		std::string	_type;
+		std::string		_type;
 };
 
 #endif

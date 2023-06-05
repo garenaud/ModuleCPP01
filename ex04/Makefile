@@ -6,17 +6,17 @@
 #    By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/30 16:30:21 by grenaud-          #+#    #+#              #
-#    Updated: 2023/06/05 15:26:56 by grenaud-         ###   ########.fr        #
+#    Updated: 2023/06/05 19:41:48 by grenaud-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp HumanA.cpp Weapon.cpp HumanB.cpp
+SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = g++
 RM = rm -f
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic #-fsanitize=address
 
-NAME = weapon
+NAME = sed
 
 all: $(NAME)
 

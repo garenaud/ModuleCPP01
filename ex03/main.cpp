@@ -6,9 +6,13 @@
 /*   By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 19:05:34 by grenaud-          #+#    #+#             */
-/*   Updated: 2023/05/30 19:06:11 by grenaud-         ###   ########.fr       */
+/*   Updated: 2023/06/05 15:21:59 by grenaud-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 int main()
 {
@@ -19,9 +23,10 @@ int main()
 		club.setType("some other type of club");
 		bob.attack();
 	}
-	{
+ 	{
 		Weapon club = Weapon("crude spiked club");
 		HumanB jim("Jim");
+		jim.attack();
 		jim.setWeapon(club);
 		jim.attack();
 		club.setType("some other type of club");
