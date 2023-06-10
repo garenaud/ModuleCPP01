@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/10 12:00:24 by grenaud-          #+#    #+#             */
-/*   Updated: 2023/06/10 12:00:24 by grenaud-         ###   ########.fr       */
+/*   Created: 2023/06/10 12:00:54 by grenaud-          #+#    #+#             */
+/*   Updated: 2023/06/10 12:00:54 by grenaud-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef HARL_HPP
+# define HARL_HPP
 
-int	main(void)
+# include <iostream>
+# include <string>
+
+class Harl
 {
-	Harl f;
+private:
+    void debug(void) const;
+    void info(void) const;
+    void warning(void) const;
+    void error(void) const;
+public:
+    Harl(void);
+    ~Harl(void);
+    void complain(std::string level) const;
+};
+	typedef void (Harl::*function_p)(void) const;
+	int		getLevel(std::string level);
 
-	f.complain("DEBUG");
-	f.complain("INFO");
-	f.complain("WARNING");
-	f.complain("ERROR");
-	return (0);
-}
+#endif

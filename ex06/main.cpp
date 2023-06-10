@@ -12,13 +12,31 @@
 
 #include "Harl.hpp"
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	Harl f;
+	Harl 	frenchie;
+	int		level;
 
-	f.complain("DEBUG");
-	f.complain("INFO");
-	f.complain("WARNING");
-	f.complain("ERROR");
+	if (argc != 2)
+	{
+		std::cout << "[ WRONG USAGE ]" << std::endl;
+		std::cout << "how to use it: ./HarlFilter <level>" << std::endl;
+		return (1);
+	}
+	level = getLevel(argv[1]);
+	switch (level)
+	{
+		case 0:
+				frenchie.complain("DEBUG");
+		case 1:
+				frenchie.complain("INFO");
+		case 2:
+				frenchie.complain("WARNING");
+		case 3:
+				frenchie.complain("ERROR");
+				break;
+		default:
+				std::cout << "\033[35m[ Probably complaining about insignificant problems ]\033[0m" << std::endl;
+	}
 	return (0);
 }
