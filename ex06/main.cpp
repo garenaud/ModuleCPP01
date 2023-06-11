@@ -19,8 +19,8 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		std::cout << "[ WRONG USAGE ]" << std::endl;
-		std::cout << "how to use it: ./HarlFilter <level>" << std::endl;
+		std::cout << "\033[1;31m[ WRONG USAGE ]\033[0m" << std::endl;
+		std::cout << "\033[32mhow to use it: ./HarlFilter <level>\033[0m" << std::endl;
 		return (1);
 	}
 	level = getLevel(argv[1]);
