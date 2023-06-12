@@ -6,13 +6,17 @@
 /*   By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 15:55:23 by grenaud-          #+#    #+#             */
-/*   Updated: 2023/06/05 19:41:02 by grenaud-         ###   ########.fr       */
+/*   Updated: 2023/06/12 13:21:57 by grenaud-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <fstream>
-#include <string>
+#include "sed.hpp"
+
+bool isFileEmpty(const std::string& filename) 
+{
+    std::ifstream file(filename);
+    return file.peek() == std::ifstream::traits_type::eof();
+}
 
 void	replaceStr(const std::string &filename, const std::string &s1, const std::string &s2)
 {
@@ -22,6 +26,12 @@ void	replaceStr(const std::string &filename, const std::string &s1, const std::s
 		std::cerr << "Error opening file " << filename << std::endl;
 		return;
 	}
+	if (isFileEmpty(filename))
+	{
+		std::cerr << "Error, empty file" << std::endl;
+		return;
+	}
+	
 	std::string outputFile = filename + ".replace";
 	std::ofstream outputFileStream(outputFile.c_str());
 	if (!outputFileStream.is_open())
